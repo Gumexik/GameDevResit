@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] public int currentHealth, maxHealth = 5,
-     experience, maxExperience = 100, currentLevel =1 ;
+     experience, maxExperience = 1000, currentLevel = 1 ;
 
      private void OnEnable() {
         // subscribing to event
@@ -17,10 +17,7 @@ public class Character : MonoBehaviour
         ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
      }
 
-    void Awake() {
-        
-        DontDestroyOnLoad(gameObject);
-    }
+  
 
     void Start() {
         currentHealth = maxHealth;
@@ -42,10 +39,16 @@ public class Character : MonoBehaviour
     }
 
     private void LevelUp() {
+        maxHealth += 1;
         currentHealth = maxHealth;
         currentLevel ++;
+        
 
         experience = 0;
         maxExperience += 100;
+    }
+    
+    public int getPlayerLevel() {
+        return currentLevel;
     }
 }

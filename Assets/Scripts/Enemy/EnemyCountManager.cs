@@ -12,8 +12,10 @@ public class EnemyCountManager : MonoBehaviour
     List<Enemy> enemies = new List<Enemy>();
     public GameObject levelFinished;
 
+
     void Update()
     {
+
         enemies = GameObject.FindObjectsOfType<Enemy>().ToList();
         UpdateEnemiesLeftText();
         LevelFinished();
@@ -25,6 +27,8 @@ public class EnemyCountManager : MonoBehaviour
         enemiesLeftText.text = $"Enemies Left: {enemies.Count}";
     }
 
+
+
     private void LevelFinished() {
         if (levelFinished == null) return;
         if (enemies.Count == 0) {
@@ -32,7 +36,7 @@ public class EnemyCountManager : MonoBehaviour
         }
         
     }
-
+    
     public void ProceedToNextLevel() {
         SceneManager.LoadScene("LevelTwo");
     }
