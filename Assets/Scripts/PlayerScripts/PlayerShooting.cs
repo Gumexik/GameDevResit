@@ -12,12 +12,17 @@ public class PlayerShooting : MonoBehaviour
 
      private float lastTimeShot = 0.2f;
 
+     [SerializeField] private AudioSource shoot;
+
     private void Update()
     {
         if(Input.GetButton("Fire1"))
         {
-
         Shoot();
+        shoot.enabled = true;
+        }
+        else {
+            shoot.enabled = false;
         }
     }
 

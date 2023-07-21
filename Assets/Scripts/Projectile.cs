@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] private float maxProjectileDistance;
 
+    [SerializeField] private int damage =2;
+
 
     void Start()
     {
@@ -25,8 +27,7 @@ public class Projectile : MonoBehaviour
          
             if (collision.transform.tag == "Enemy")
         {
-            // do damage here, for example:
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(2);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         }
             Destroy(this.gameObject);
     }

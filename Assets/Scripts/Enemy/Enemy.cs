@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
 
     public static event Action<Enemy> OnEnemyKilled;
+
     [SerializeField] float health, maxHealth = 10;
 
     [SerializeField] FloatingHealthBar healthBar;
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealth);
 
         if (health <=0) {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             OnEnemyKilled?.Invoke(this);
             ExperienceManager.Instance.AddExperience(expAmount);
         }

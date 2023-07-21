@@ -15,7 +15,6 @@ public class LifeDisplay : MonoBehaviour
     public Character playerHealth;
     
 
-    // Update is called once per frame
     void Update()
     {
         health = playerHealth.currentHealth;

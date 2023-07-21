@@ -17,6 +17,11 @@ public class Character : MonoBehaviour
         ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
      }
 
+    void Awake() {
+        
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start() {
         currentHealth = maxHealth;
     }

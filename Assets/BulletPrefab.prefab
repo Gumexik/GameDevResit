@@ -62,8 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0570ed2ae1da76f47b524c8a4a3b9f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
+  projectileSpeed: 15
   maxProjectileDistance: 15
+  damage: 8
 --- !u!54 &-2238992125866954109
 Rigidbody:
   m_ObjectHideFlags: 0
